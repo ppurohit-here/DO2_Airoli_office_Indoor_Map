@@ -276,3 +276,39 @@ image.addEventListener('mouseleave', function() {
     isDragging = false;
     image.style.cursor = 'grab';  // Reset cursor when leaving the image area
 });
+
+// Get the modal and the image elements
+var modal = document.getElementById("imageModal");
+var modalImage = document.getElementById("indoorMapModal");
+var mapImage = document.getElementById("indoorMapImage");
+
+// Get the close button
+var closeBtn = document.getElementById("closeModal");
+
+// Open modal when the map image is clicked
+mapImage.onclick = function() {
+    modal.style.display = "flex"; // Display modal
+    modalImage.style.transform = "scale(1)"; // Reset zoom level
+};
+
+// Close the modal when the close button is clicked
+closeBtn.onclick = function() {
+    modal.style.display = "none"; // Hide modal
+};
+
+// Close the modal if clicked outside of the modal content
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none"; // Hide modal if clicked outside
+    }
+};
+
+// Enable image zoom functionality
+modalImage.onwheel = function(event) {
+    event.preventDefault(); // Prevent page scroll while zooming
+    if (event.deltaY < 0) {
+        modalImage.style.transform = "scale(1.1)"; // Zoom in
+    } else {
+        modalImage.style.transform = "scale(0.9)"; // Zoom out
+    }
+};
