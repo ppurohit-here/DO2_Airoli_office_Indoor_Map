@@ -173,3 +173,24 @@ button:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     display: none;
 }
+
+/* Media Query for Smaller Screens (Mobile Devices) */
+@media screen and (max-width: 768px) {
+    #infoBox {
+        position: fixed;  /* Fix position so it adapts to the screen size */
+        bottom: 20px;  /* Move it to the bottom of the screen */
+        left: 50%;  /* Center it horizontally */
+        transform: translateX(-50%);  /* Adjust the position to center */
+        width: 80%;  /* Make it smaller, so it fits well on mobile */
+        max-width: 300px;  /* Set a maximum width to prevent it from being too wide */
+        top: auto;  /* Remove the top positioning on smaller screens */
+    }
+}
+
+/* Optional: Adjust for extra small screens */
+@media screen and (max-width: 480px) {
+    #infoBox {
+        width: 90%;  /* Make the info box even smaller */
+        max-width: 250px;
+    }
+}
