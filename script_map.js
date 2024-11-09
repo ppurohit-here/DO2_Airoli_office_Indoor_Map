@@ -1,6 +1,6 @@
 // Initialize HERE map
 const platform = new H.service.Platform({
-    apikey: 'jJElkNruxi27GR5Mcl3uJzo9XEBp1Had_Qn50BVOipg'
+    apikey: 'TyzPD4uB2pGRgtcxZeMlhd4Tuz6oXK_vpEK6gLCsEdg'
 });
 const defaultLayers = platform.createDefaultLayers();
 const map = new H.Map(
