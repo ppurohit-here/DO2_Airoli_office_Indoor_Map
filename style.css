@@ -155,6 +155,60 @@ button:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Mobile View */
+@media (max-width: 768px) {
+    /* Reduce padding for the legend container */
+    #legendContainer {
+        padding: 10px;
+    }
+
+    /* Reduce font size for Map Details */
+    #mapDetails h4 {
+        font-size: 1rem;
+    }
+
+    #mapDetails p {
+        font-size: 0.85rem;
+    }
+
+    /* Adjust list items */
+    .legend-list li {
+        font-size: 0.8rem;
+    }
+
+    .legend-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Make the legend container scrollable on small screens */
+    #legendContainer {
+        max-height: 400px; /* Limit the height */
+        overflow-y: auto; /* Enable scrolling if content overflows */
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    #mapDetails h4 {
+        font-size: 0.9rem; /* Further reduce the font size for smaller devices */
+    }
+
+    #mapDetails p {
+        font-size: 0.75rem;
+    }
+
+    .legend-list li {
+        font-size: 0.7rem; /* Make the list text smaller */
+    }
+
+    /* Reduce the size of the legend icon further */
+    .legend-icon {
+        width: 15px;
+        height: 15px;
+    }
+}
+
 #legendContainer h3, #imageContainer h3 {
     margin-top: 0;
     color: #333;
