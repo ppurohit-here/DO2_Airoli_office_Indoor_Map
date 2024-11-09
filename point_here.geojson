@@ -130,7 +130,7 @@
         "OBJECTID": 48,
         "Road_Name": "highway",
         "ORIG_FID": 3,
-        "Room_name": "idgate_2",
+        "Room_name": "id_gate",
         "Workstation": 380,
         "accessibility": "employes"
       }
@@ -169,7 +169,7 @@
         "OBJECTID": 55,
         "Road_Name": "highway",
         "ORIG_FID": 86,
-        "Room_name": "route_to_ido6",
+        "Room_name": "ido6",
         "Workstation": 377,
         "accessibility": "employes"
       }
@@ -3707,7 +3707,7 @@
         "OBJECTID": 781,
         "Road_Name": "routing_road",
         "ORIG_FID": 28,
-        "Room_name": "route_to_cafe",
+        "Room_name": "cafe",
         "Workstation": 383,
         "accessibility": "employes"
       }
@@ -6785,7 +6785,7 @@
         "OBJECTID": 943,
         "Road_Name": "highway",
         "ORIG_FID": 5,
-        "Room_name": "main_entrance",
+        "Room_name": "entrance",
         "Workstation": 378,
         "accessibility": "employes"
       }
