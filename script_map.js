@@ -1,6 +1,6 @@
 // Initialize HERE map
 const platform = new H.service.Platform({
-    apikey: 'TyzPD4uB2pGRgtcxZeMlhd4Tuz6oXK_vpEK6gLCsEdg'
+    apikey: 'jJElkNruxi27GR5Mcl3uJzo9XEBp1Had_Qn50BVOipg'
 });
 const defaultLayers = platform.createDefaultLayers();
 const map = new H.Map(
@@ -225,3 +225,54 @@ document.getElementById('searchButton').addEventListener('click', searchLocation
 // Initialize the map and markers
 loadMarkers();
 
+// Variables to keep track of zoom level and image position
+let zoomLevel = 1;  // Default zoom level
+let image = document.getElementById('indoorMapImage');
+
+// Zooming in/out using mouse wheel
+image.addEventListener('wheel', function(event) {
+    event.preventDefault();  // Prevent default scroll behavior
+    
+    if (event.deltaY < 0) { // Mouse wheel up (zoom in)
+        zoomLevel += 0.1;
+    } else if (event.deltaY > 0) { // Mouse wheel down (zoom out)
+        zoomLevel -= 0.1;
+        if (zoomLevel < 1) zoomLevel = 1; // Don't allow zooming out too much
+    }
+    updateImageTransform();
+});
+
+
+// Update the transform property of the image
+function updateImageTransform() {
+    image.style.transform = `scale(${zoomLevel})`;  // Apply scaling
+}
+
+// Implementing drag-to-pan functionality
+let isDragging = false;
+let startX, startY;
+
+image.addEventListener('mousedown', function(event) {
+    isDragging = true;
+    startX = event.pageX - image.offsetLeft;
+    startY = event.pageY - image.offsetTop;
+    image.style.cursor = 'grabbing';  // Change cursor to grabbing
+});
+
+window.addEventListener('mousemove', function(event) {
+    if (isDragging) {
+        let offsetX = event.pageX - startX;
+        let offsetY = event.pageY - startY;
+        image.style.transform = `scale(${zoomLevel}) translate(${offsetX}px, ${offsetY}px)`;  // Move image with mouse drag
+    }
+});
+
+window.addEventListener('mouseup', function() {
+    isDragging = false;
+    image.style.cursor = 'grab';  // Change cursor back to grab
+});
+
+image.addEventListener('mouseleave', function() {
+    isDragging = false;
+    image.style.cursor = 'grab';  // Reset cursor when leaving the image area
+});
