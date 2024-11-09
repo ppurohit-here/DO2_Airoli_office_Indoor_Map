@@ -15,14 +15,16 @@
     <header>
         <h1>Indoor Map Routing</h1>
     </header>
+
     <main id="controlContainer">
+        <!-- Search and Route UI sections (no changes here) -->
         <section class="control-box">
             <h3>Search Location</h3>
             <input type="text" id="searchBox" placeholder="Search Workstation or Room" aria-label="Search Workstation or Room_name">
             <button type="button" id="searchButton" aria-label="Search for a Workstation or Room_name">Search</button>
             <button type="button" onclick="clearSearch()">Clear Search</button>
         </section>
-        
+
         <section class="control-box">
             <h3>Find Route</h3>
             <input type="text" id="startBox" placeholder="Starting Location (e.g., prahar1)" aria-label="Starting Location">
@@ -32,14 +34,60 @@
             <button type="button" onclick="toggleSatelliteView()">Toggle View</button>
             <button id="getLocationBtn">Find My Location</button>
         </section>
-        
     </main>
-    <div id="mapContainer" style="width: 100%; height: 100%;"></div>
-    
+
+    <!-- New layout for the main content area -->
+    <div id="mainContent">
+        <!-- Map container (taking up 65% width) -->
+        <div id="mapContainer"></div>
+
+        <!-- Legend and Image containers, stacked vertically -->
+        <div id="sideContainer">
+            <!-- Legend Container -->
+            <div id="legendContainer">
+                <h3>Map Legend</h3>
+                <ul class="legend-list">
+                    <li>
+                        <span class="legend-icon" style="background-color: rgb(67, 138, 204);"></span> point_of_interest
+                    </li>
+                    <li>
+                        <span class="legend-icon" style="background-color: darkgrey;"></span> Meeting Room
+                    </li>
+                    <li>
+                        <span class="legend-icon" style="background-color: green;"></span> Cafe
+                    </li>
+                    <li>
+                        <span class="legend-icon" style="background-color: black;"></span> Storage Room / Server Room
+                    </li>
+                    <li>
+                        <span class="legend-icon" style="background-color: red;"></span> Entrance
+                    </li>
+                    <li>
+                        <span class="legend-icon" style="background-color: black;"></span> Reception
+                    </li>
+                    <li>
+                        <span class="legend-icon" style="background-color: blue;"></span> Search Marker
+                    </li>
+                    <li>
+                        <span class="legend-icon" style="background-color: orange;"></span> POI Marker
+                    </li>
+                </ul>
+            </div>
+            
+
+            <!-- Image Container -->
+            <div id="imageContainer">
+                <h3>Indoor Map</h3>
+                <img id="indoorMapImage" src="indoor_ido2.jpg" alt="Indoor Map">
+                <div id="zoomControls">
+                </div>
+            </div>
+            
+
     <div id="infoBox" style="display: none;"> 
         <div id="infoContent"></div> 
     </div>
-    
+
     <script src="script_map.js"></script>
 </body>
 </html>
