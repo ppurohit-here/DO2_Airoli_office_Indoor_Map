@@ -214,40 +214,36 @@ button:hover {
     color: #333;
 }
 
-/* Info box styling */
+/*  infoBox styling */
 #infoBox {
-    position: absolute;
+    position: fixed; /* Change from absolute to fixed */
     top: 540px;
-    right: 690px;
-    width: 250px;
+    left: 20px;
+    width: 200px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    display: none;
+    display: none; /* Hide by default */
+    z-index: 1000; /* Ensures it stays above other elements */
 }
 
-/* Media Query for Smaller Screens (Mobile Devices) */
+/* Adjusted position for mobile */
 @media screen and (max-width: 768px) {
     #infoBox {
-        position: fixed;  /* Fix position so it adapts to the screen size */
-        bottom: 20px;  /* Move it to the bottom of the screen */
-        left: 50%;  /* Center it horizontally */
-        transform: translateX(-50%);  /* Adjust the position to center */
-        width: 80%;  /* Make it smaller, so it fits well on mobile */
-        max-width: 300px;  /* Set a maximum width to prevent it from being too wide */
-        top: auto;  /* Remove the top positioning on smaller screens */
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 300px;
+        padding: 15px;
+        top: auto;
+        right: auto;
     }
 }
 
-/* Optional: Adjust for extra small screens */
-@media screen and (max-width: 480px) {
-    #infoBox {
-        width: 90%;  /* Make the info box even smaller */
-        max-width: 250px;
-    }
-}
+
 
 /* Basic modal styling */
 .modal {
